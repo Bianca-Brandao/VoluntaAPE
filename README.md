@@ -1,6 +1,6 @@
 # VoluntaAPE - Sistema de Gerenciamento de Voluntários
 
-Sistema de gerenciamento de voluntários para situações de emergência, desenvolvido em Node.js com SQLite.
+VoluntaAPE(Atingidos Por Enchentes) tem a proposta de gerenciar voluntários e locais que precisam de ajuda, auxiliando as pessoas atingidas, de forma organizada. Sistema desenvolvido em Node.js com SQLite.
 
 ## 📋 Funcionalidades
 
