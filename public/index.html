@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VoluntaAPE - Inscrições</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>VoluntaAPE</h1>
+      <p>Sistema de apoio a Atingidos Por Enchentes (APE): Cadastro de voluntários, locais de ajuda e vínculo de problemas em emergências.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Cadastro de Voluntário</h2>
+      <form id="form-voluntario">
+        <label>Nome<span>*</span><input type="text" name="nome" required /></label>
+        <label>Idade<span>*</span><input type="number" name="idade" min="18" required /></label>
+        <label>Telefone<span>*</span><input type="text" name="telefone" required /></label>
+        <label>E-mail<input type="email" name="email" /></label>
+        <label>Habilidades (separadas por vírgula)<input type="text" name="habilidades" placeholder="Ex: primeiros socorros, organização" /></label>
+        <label>Endereço<span>*</span><input type="text" name="endereco" required /></label>
+        <button type="submit">Cadastrar voluntário</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Cadastro de Local de Ajuda</h2>
+      <form id="form-local">
+        <label>Endereço<span>*</span><input type="text" name="endereco" required /></label>
+        <label>Problema<span>*</span>
+          <select name="problemaCodigo" required></select>
+        </label>
+        <label>Descrição<input type="text" name="descricao" /></label>
+        <label>Latitude<input type="number" name="latitude" step="any" /></label>
+        <label>Longitude<input type="number" name="longitude" step="any" /></label>
+        <button type="submit">Cadastrar local</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Vincular Voluntário a Problema</h2>
+      <form id="form-vincular">
+        <label>Voluntário<span>*</span>
+          <select name="voluntarioId" required></select>
+        </label>
+        <label>Problema<span>*</span>
+          <select name="problemaCodigo" required></select>
+        </label>
+        <label>Local de Ajuda (se disponível)
+          <select name="localId"></select>
+        </label>
+        <button type="submit">Vincular</button>
+      </form>
+    </section>
+
+    <section class="card cards-grid">
+      <div>
+        <h2>Problemas</h2>
+        <ul id="lista-problemas"></ul>
+      </div>
+      <div>
+        <h2>Voluntários</h2>
+        <ul id="lista-voluntarios"></ul>
+      </div>
+      <div>
+        <h2>Locais de Ajuda</h2>
+        <ul id="lista-locais"></ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Pesquisa de Vínculos</h2>
+      <form id="form-pesquisa">
+        <label>Pesquisar (nome, telefone, endereço ou problema)
+          <input type="text" name="query" placeholder="Digite para pesquisar..." />
+        </label>
+        <button type="submit">Pesquisar</button>
+      </form>
+      <div id="resultados-pesquisa"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
